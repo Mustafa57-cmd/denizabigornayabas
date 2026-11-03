@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÇOK ÖNEMLİ SİTE!</title>
+    <style>
+        /* Arka plan tamamen sabit koyu gridir, asla renk değiştirmez veya yanıp sönmez */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; 
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Sabit kırmızı buton, herhangi bir parlama efekti barındırmaz */
+        .btn-baslat {
+            padding: 20px 50px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="yazi">Sistemi Başlatmak İçin Aşağıdaki Butona Tıklayın...</h1>
+    
+    <button class="btn-baslat" id="baslatBtn" onclick="trollBaslat()">BAŞLAT</button>
+
+    <!-- Arka planda çalacak korna sesi -->
+    <audio id="kornaSesi" src="korna.mp3" loop></audio>
+
+    <script>
+        function trollBaslat() {
+            var ses = document.getElementById("kornaSesi");
+            var buton = document.getElementById("baslatBtn");
+            var yazi = document.getElementById("yazi");
+
+            // Sesi başlatır
+            ses.play();
+            
+            // Butonu ekrandan kaldırır
+            buton.style.display = "none";
+
+            // Sadece ekrandaki metni değiştirir, görsel hiçbir hareket veya flaş yoktur
+            yazi.innerText = "GEÇMİŞ OLSUN! 📣📣📣";
+            yazi.style.fontSize = "5rem";
+        }
+    </script>
+
+</body>
+</html>
